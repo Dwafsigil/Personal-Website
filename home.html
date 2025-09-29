@@ -4,36 +4,71 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="css/global.css" rel="stylesheet" />
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/home.css" rel="stylesheet" />
+
     <title>Johnny Tu</title>
   </head>
   <body>
-    <div class="container">
+    <header class="site-header">
       <nav class="navbar">
-        <h3>JT DEV</h3>
+        <h3 class="tag">JT - 25</h3>
         <ul class="nav-links">
-          <li><a href="home.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contacts.html">Contacts</a></li>
-          <li><a href="projects.html">Projects</a></li>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
-      <h1 class="main-header">Welcome to my Website!</h1>
-      <article>
-        <h1 class="header">
-          Aspiring FullStack Web Developer & Applied AI Engineer
-        </h1>
-        <p class="paragraph">
-          Hello! My name is Johnny Tu, and I am an aspiring FullStack Web
-          Developer and Applied AI Engineer. I am currently a student at the
-          University of California, Irvine, pursuing a Bachelor of Science in
-          Computer Science. I have a strong passion for technology and
-          programming, and I am eager to learn and grow in this field. On this
-          website, you will find information about my projects, skills, and
-          experiences. Feel free to explore and reach out to me if you have any
-          questions or opportunities!
-        </p>
-      </article>
-    </div>
+    </header>
+
+    <main class="main-content">
+      <section class="home">
+        <article class="home-container">
+          <h1 class="role-header">Aspiring FullStack Web Developer</h1>
+          <p class="paragraph">
+            Hello, I'm <strong>Johnny Tu</strong>, an aspiring FullStack Web
+            Developer - it's my passion to code and solve problems with AI. Come
+            check out my projects and see what I've been working on!
+          </p>
+        </article>
+      </section>
+
+      <section class="projects">
+        <div class="projects-container">
+          <h2>Projects</h2>
+
+          <ul class="projects-list">
+            <li>
+              <a
+                class="project-item"
+                href="https://github.com/Dwafsigil/JagCoach"
+                target="_blank"
+              >
+                <img
+                  src="img/JagCoach.png"
+                  alt="Portrait of Johnny Tu"
+                  loading="lazy"
+                  decoding="async"
+                  class="img-fluid"
+                />
+              </a>
+              <header class="project-header">
+                <h2 class="project-title">JagCoach</h2>
+                <h2 class="project-date">Jan - May 2025</h2>
+              </header>
+            </li>
+            <li><a class="project-item">Project 2</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="skills">
+        <div class="container"><h2>Skills</h2></div>
+      </section>
+
+      <section id="contact" class="snap-section">
+        <div class="container"><h2>Contact</h2></div>
+      </section>
+    </main>
   </body>
 </html>

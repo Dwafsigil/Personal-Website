@@ -1,43 +1,183 @@
-/* Page Defaults */
+:root {
+  --header-h: 64px;
+  --container-w: 1500px; /* max readable width */
+}
+
+/* Reset & base */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
-.container {
-  /* max-width: 1200px; */
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 5vw;
-  position: relative;
+html {
+  font-size: clamp(16px, 1.5vw, 18px);
+  scroll-behavior: smooth;
 }
 
-.navbar {
+/* Sticky header */
+.site-header {
+  position: sticky;
+  top: 0;
+  /* Places above other content, higher = more priority */
+  z-index: 1000;
+  height: var(--header-h);
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
   display: flex;
-  justify-content: space-between;
+  align-items: center;
 }
 
+/* Nav bar content aligned & centered within a container width */
+.navbar {
+  /* Pick the smaller of two values */
+  width: min(var(--container-w), 92%);
+  /* horizontal and vertical */
+  margin: 0 auto;
+  display: flex;
+  /* Vertically centers the flex items along the navbar's height */
+  align-items: center;
+  /* Left and right child spaced as far as possible */
+  justify-content: space-between;
+  /* Horizontal padding */
+  padding-inline: 20px;
+}
+.tag {
+  font-size: clamp(0.95rem, 1.25vw, 1.7rem);
+}
 .nav-links {
+  /* Removes bulelt points */
   list-style: none;
   display: flex;
-  gap: 20px;
+  /* Space between each link */
+  gap: 1.8rem;
 }
 
 .nav-links a {
-  text-decoration: none;
-  color: blue;
-  font-size: 20px;
+  /* Turns each element into a block-level element */
+  display: block;
+  font-size: clamp(0.95rem, 1.25vw, 1.7rem);
+  line-height: 1; /* prevents vertical jiggle */
+  text-decoration: none; /* we'll draw our own underline */
+  padding: 0.5rem 0.75rem; /* stable click target */
+  border-bottom: 2px solid transparent; /* reserve underline space */
 }
 
+/* Stable states (no layout shift) */
 .nav-links a:hover {
-  color: red;
+  border-bottom-color: #222;
 }
 
 .nav-links a:visited {
-  color: purple;
+  color: #222;
+}
+.nav-links a:active {
+  color: #6b21a8;
 }
 
-.nav-links a:active {
-  color: green;
+/* Page sections (no scroll-snap; normal page scroll) */
+section {
+  /* 72 Padding top and bottom */
+  padding: 50px 0;
+  /* Prevents sticky heaader from blocking content */
+  scroll-margin-top: var(--header-h); /* anchor offset under sticky header */
 }
+
+/* Content container for sections */
+.container {
+  width: min(var(--container-w), 92%);
+  margin: 0 auto;
+  padding-inline: 20px;
+}
+
+/* Fluid typography */
+/* h1.role-header { */
+/* font-size: clamp(2rem, 6vw, 4rem);
+  line-height: 1.15;
+}
+.paragraph {
+  font-size: clamp(1rem, 2.2vw, 1.125rem);
+  max-width: 60ch;
+} */
+
+/* Home CSS */
+.home-container {
+  display: grid;
+  /* margin-top: 200px; */
+  margin: 200px auto 0;
+  grid-template-columns: 3fr 1fr 1fr;
+  gap: 60px;
+  width: 1400px;
+  font-size: clamp(2rem, 5vw, 4rem);
+  /* justify-content: center; */
+  align-items: center;
+  margin-bottom: 400px;
+}
+
+.role-header {
+  grid-column: 1/3;
+  grid-row: 1;
+  text-shadow: 1px 1px gray;
+  font-size: clamp(2rem, 6vw, 6rem);
+  line-height: 1.15;
+}
+
+.paragraph {
+  grid-column: 1/3;
+  grid-row: 2;
+  /* font-size: 24px; */
+  color: rgb(78, 78, 78);
+  line-height: 40px;
+  font-size: clamp(1rem, 1.5vw, 3rem);
+  max-width: 60ch;
+}
+
+/* Projects */
+
+.projects {
+  border-top: 1px solid black;
+  width: 1400px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.projects-container {
+  margin: 10px auto;
+}
+
+.projects-list {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  list-style: none;
+  gap: 20px;
+  /* background-color: #222; */
+}
+
+.projects-list a {
+  display: block;
+  aspect-ratio: 4 / 3;
+  padding: 1rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.projects-list img {
+  display: block; /* remove inline gap */
+  width: 100%;
+  height: 100%;
+
+  object-position: center;
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+}
+/* article {
+  display: grid;
+  margin-top: 250px;
+  grid-template-columns: 3.5fr 1fr;
+  gap: 20px;
+  font-size: clamp(2rem, 5vw, 4rem);
+} */
