@@ -8,10 +8,16 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
 }
 html {
   font-size: clamp(16px, 1.5vw, 18px);
   scroll-behavior: smooth;
+}
+
+body {
+  background-color: rgb(20, 20, 20);
+  color: white;
 }
 
 /* Sticky header */
@@ -21,8 +27,8 @@ html {
   /* Places above other content, higher = more priority */
   z-index: 1000;
   height: var(--header-h);
-  background: #fff;
-  border-bottom: 1px solid #e5e7eb;
+  background: rgb(20, 20, 20);
+  /* border-bottom: 1px solid #e5e7eb; */
   display: flex;
   align-items: center;
 }
@@ -55,20 +61,21 @@ html {
 .nav-links a {
   /* Turns each element into a block-level element */
   display: block;
-  font-size: clamp(0.95rem, 1.25vw, 1.7rem);
+  font-size: clamp(0.6rem, 1.25vw, 1.7rem);
   line-height: 1; /* prevents vertical jiggle */
   text-decoration: none; /* we'll draw our own underline */
   padding: 0.5rem 0.75rem; /* stable click target */
   border-bottom: 2px solid transparent; /* reserve underline space */
+  color: white;
 }
 
 /* Stable states (no layout shift) */
 .nav-links a:hover {
-  border-bottom-color: #222;
+  border-bottom-color: white;
 }
 
 .nav-links a:visited {
-  color: #222;
+  color: white;
 }
 .nav-links a:active {
   color: #6b21a8;
@@ -125,7 +132,7 @@ section {
   grid-column: 1/3;
   grid-row: 2;
   /* font-size: 24px; */
-  color: rgb(78, 78, 78);
+  color: rgb(153, 153, 153);
   line-height: 40px;
   font-size: clamp(1rem, 1.5vw, 3rem);
   max-width: 60ch;
@@ -134,10 +141,11 @@ section {
 /* Projects */
 
 .projects {
-  border-top: 1px solid black;
+  border-top: 1px solid rgb(255, 255, 255);
   width: 1400px;
   margin: 0 auto;
   padding: 10px;
+  margin-bottom: 400px;
 }
 
 .projects-container {
@@ -156,9 +164,10 @@ section {
 .projects-list a {
   display: block;
   aspect-ratio: 4 / 3;
-  padding: 1rem;
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
+  /* padding: 1rem; */
+  /* border: 1px solid #e5e7eb; */
+  /* Messes with the corners of the border */
+  /* border-radius: 0; */
   margin-bottom: 10px;
 }
 
@@ -174,10 +183,88 @@ section {
   display: flex;
   justify-content: space-between;
 }
-/* article {
+
+/* Skills */
+
+.skills {
+  border-top: 1px solid rgb(255, 255, 255);
+  width: 1400px;
+  margin: 0 auto 6rem;
+  /* margin-bottom: 400px; */
+  padding: 1rem 20px;
+}
+
+.skills-container {
+  margin: 10px auto;
+}
+
+.skills-header {
+  display: block;
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 20;
+}
+
+.skills-paragraph {
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+  color: rgb(153, 153, 153);
+  font-size: clamp(1rem, 1.25vw, 3rem);
+  /* margin-left: auto;
+  margin-right: auto; */
+}
+
+.skills-list-header {
+  margin-top: 60px;
+}
+
+.skills-list {
+  margin-top: 40px;
   display: grid;
-  margin-top: 250px;
-  grid-template-columns: 3.5fr 1fr;
-  gap: 20px;
-  font-size: clamp(2rem, 5vw, 4rem);
-} */
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  list-style: none;
+  gap: 40px;
+}
+
+.skills-list a {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  aspect-ratio: 1/1;
+  /* padding: 1rem; */
+  /* border: 1px solid #e5e7eb; */
+  /* Messes with the corners of the border */
+  border-radius: 0;
+  margin-bottom: 10px;
+  background-color: rgb(29, 29, 29);
+  padding: 16px;
+  /* box-shadow: 10px 10px rgb(41, 41, 41); */
+}
+
+.skills-list img {
+  display: block;
+  height: 60%;
+  width: 60%;
+  justify-self: center;
+  margin-top: 40px;
+  /* margin-top: 30px; */
+}
+
+.skills-title {
+  text-align: center;
+  margin-top: 25px;
+}
+/* Contacts */
+
+.contacts {
+  border-top: 1px solid black;
+  width: 1400px;
+  margin: 0 auto;
+  margin-bottom: 400px;
+  padding: 10px;
+}
+
+.contacts-container {
+  margin: 10px auto;
+}
