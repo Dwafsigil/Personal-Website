@@ -27,7 +27,7 @@ body {
   /* Places above other content, higher = more priority */
   z-index: 1000;
   height: var(--header-h);
-  background: rgb(20, 20, 20);
+  background: rgb(29, 29, 29);
   /* border-bottom: 1px solid #e5e7eb; */
   display: flex;
   align-items: center;
@@ -59,13 +59,12 @@ body {
 }
 
 .nav-links a {
-  /* Turns each element into a block-level element */
   display: block;
   font-size: clamp(0.6rem, 1.25vw, 1.7rem);
-  line-height: 1; /* prevents vertical jiggle */
-  text-decoration: none; /* we'll draw our own underline */
-  padding: 0.5rem 0.75rem; /* stable click target */
-  border-bottom: 2px solid transparent; /* reserve underline space */
+  line-height: 1;
+  text-decoration: none;
+  padding: 0.5rem 0.75rem;
+  border-bottom: 2px solid transparent;
   color: white;
 }
 
@@ -110,14 +109,14 @@ section {
 .home-container {
   display: grid;
   /* margin-top: 200px; */
-  margin: 200px auto 0;
+  margin: 150px auto 0;
   grid-template-columns: 3fr 1fr 1fr;
   gap: 60px;
   width: 1400px;
   font-size: clamp(2rem, 5vw, 4rem);
   /* justify-content: center; */
   align-items: center;
-  margin-bottom: 400px;
+  margin-bottom: 300px;
 }
 
 .role-header {
@@ -244,8 +243,10 @@ section {
 
 .skills-list img {
   display: block;
+  /* height: 65%; */
   height: 60%;
   width: 60%;
+  object-fit: contain;
   justify-self: center;
   margin-top: 40px;
   /* margin-top: 30px; */
@@ -255,6 +256,12 @@ section {
   text-align: center;
   margin-top: 25px;
 }
+
+/* .github {
+  height: 90%;
+  width: 90%;
+} */
+
 /* Contacts */
 
 .contacts {
@@ -267,4 +274,45 @@ section {
 
 .contacts-container {
   margin: 10px auto;
+}
+
+/* Footer */
+.site-footer {
+  /* border-top: 1px solid rgb(255, 255, 255); */
+  width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+.footer-text {
+  /* color: rgb(153, 153, 153); */
+  font-size: clamp(1rem, 3vw, 3rem);
+}
+
+.social-links {
+  list-style: none;
+  display: grid;
+  width: 200px;
+  height: 150px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 50px;
+
+  /* justify-content: center; */
+  gap: 10px;
+  /* margin-top: px; */
+  margin: 80px auto;
+  margin-bottom: 0;
+}
+
+.social-links a {
+  text-decoration: none;
+  color: white;
+  aspect-ratio: 1/1;
+}
+
+.social-links img {
+  text-decoration: none;
+  height: 100%;
+  width: auto;
 }
