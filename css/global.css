@@ -36,7 +36,8 @@ body {
 /* Nav bar content aligned & centered within a container width */
 .navbar {
   /* Pick the smaller of two values */
-  width: min(var(--container-w), 92%);
+  /* width: min(var(--container-w), 92%); */
+  width: 90%;
   /* horizontal and vertical */
   margin: 0 auto;
   display: flex;
@@ -89,11 +90,11 @@ section {
 }
 
 /* Content container for sections */
-.container {
+/* .container {
   width: min(var(--container-w), 92%);
   margin: 0 auto;
   padding-inline: 20px;
-}
+} */
 
 /* Fluid typography */
 /* h1.role-header { */
@@ -113,7 +114,7 @@ section {
   grid-template-columns: 3fr 1fr 1fr;
   gap: 60px;
   width: 1400px;
-  font-size: clamp(1rem, 5vw, 4rem);
+  /* font-size: clamp(1rem, 5vw, 4rem); */
   /* justify-content: center; */
   align-items: center;
   margin-bottom: 300px;
