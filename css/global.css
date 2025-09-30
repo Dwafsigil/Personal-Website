@@ -31,6 +31,7 @@ body {
 .site-header {
   position: sticky;
   top: 0;
+  inset-inline: 0;
   /* Places above other content, higher = more priority */
   z-index: 1000;
   height: var(--header-h);
@@ -44,7 +45,7 @@ body {
 .navbar {
   /* Pick the smaller of two values */
   /* width: min(var(--container-w), 92%); */
-  width: 90%;
+  width: 100%;
   /* horizontal and vertical */
   margin: 0 auto;
   display: flex;
