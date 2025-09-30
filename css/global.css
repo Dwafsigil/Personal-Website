@@ -24,7 +24,7 @@ body {
 .container {
   width: 100%;
   margin: 0 auto;
-  /* padding-inline: 20px; */
+  padding-inline: 100px;
 }
 
 /* Sticky header */
@@ -39,13 +39,14 @@ body {
   /* border-bottom: 1px solid #e5e7eb; */
   display: flex;
   align-items: center;
+  padding-inline: 0;
 }
 
 /* Nav bar content aligned & centered within a container width */
 .navbar {
   /* Pick the smaller of two values */
   /* width: min(var(--container-w), 92%); */
-  width: 100%;
+  width: 90%;
   /* horizontal and vertical */
   margin: 0 auto;
   display: flex;
@@ -57,7 +58,7 @@ body {
   padding-inline: 0;
 }
 .tag {
-  font-size: clamp(0.95rem, 1.25vw, 3rem);
+  font-size: clamp(1rem, 1.25vw, 3rem);
 }
 .nav-links {
   /* Removes bulelt points */
@@ -114,7 +115,7 @@ section {
   margin: 150px auto 0;
   grid-template-columns: 3fr 1fr 1fr;
   gap: 60px;
-  width: 1400px;
+  /* width: 1400px; */
   /* font-size: clamp(1rem, 5vw, 4rem); */
   /* justify-content: center; */
   align-items: center;
@@ -143,7 +144,7 @@ section {
 
 .projects {
   border-top: 1px solid rgb(255, 255, 255);
-  width: 1400px;
+  /* width: 1400px; */
   margin: 0 auto;
   padding: 10px;
   margin-bottom: 400px;
@@ -189,7 +190,7 @@ section {
 
 .skills {
   border-top: 1px solid rgb(255, 255, 255);
-  width: 1400px;
+  /* width: 1400px; */
   margin: 0 auto 6rem;
   /* margin-bottom: 400px; */
   padding: 1rem 20px;
@@ -268,7 +269,7 @@ section {
 
 .contacts {
   border-top: 1px solid black;
-  width: 1400px;
+  /* width: 1400px; */
   margin: 0 auto;
   margin-bottom: 400px;
   padding: 10px;
@@ -281,7 +282,7 @@ section {
 /* Footer */
 .site-footer {
   /* border-top: 1px solid rgb(255, 255, 255); */
-  width: 1400px;
+  /* width: 1400px; */
   margin: 0 auto;
   padding: 20px;
   margin-bottom: 40px;
