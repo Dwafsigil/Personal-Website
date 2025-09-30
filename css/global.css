@@ -20,6 +20,13 @@ body {
   color: white;
 }
 
+/* Content container for sections */
+.container {
+  width: 100%;
+  margin: 0 auto;
+  /* padding-inline: 20px; */
+}
+
 /* Sticky header */
 .site-header {
   position: sticky;
@@ -46,7 +53,7 @@ body {
   /* Left and right child spaced as far as possible */
   justify-content: space-between;
   /* Horizontal padding */
-  padding-inline: 20px;
+  padding-inline: 0;
 }
 .tag {
   font-size: clamp(0.95rem, 1.25vw, 3rem);
@@ -88,13 +95,6 @@ section {
   /* Prevents sticky heaader from blocking content */
   scroll-margin-top: var(--header-h); /* anchor offset under sticky header */
 }
-
-/* Content container for sections */
-/* .container {
-  width: min(var(--container-w), 92%);
-  margin: 0 auto;
-  padding-inline: 20px;
-} */
 
 /* Fluid typography */
 /* h1.role-header { */
