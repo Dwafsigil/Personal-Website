@@ -214,6 +214,7 @@ section {
   margin-top: 30px;
   color: rgb(153, 153, 153);
   font-size: clamp(1rem, 1.25vw, 3rem);
+  line-height: 30px;
   /* margin-left: auto;
   margin-right: auto; */
 }
@@ -297,15 +298,16 @@ section {
   list-style: none;
   display: grid;
   width: 200px;
-  height: 150px;
+  height: 100px;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 50px;
 
   /* justify-content: center; */
   gap: 10px;
   /* margin-top: px; */
-  margin: 80px auto;
-  margin-bottom: 0;
+  margin: 0 auto;
+  margin-top: 50px;
+  margin-bottom: 20px;
 }
 
 .social-links a {
@@ -318,4 +320,15 @@ section {
   text-decoration: none;
   height: 100%;
   width: auto;
+}
+
+.email-button {
+  background-color: rgb(20, 20, 20);
+  color: white;
+  border: 1px solid white;
+  border-radius: 150px;
+  padding: 12px 24px;
+  font-size: clamp(1rem, 1.5vw, 2rem);
+  cursor: pointer;
+  text-decoration: none;
 }

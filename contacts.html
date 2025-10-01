@@ -4,20 +4,37 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="css/global.css" rel="stylesheet" />
-    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/contacts.css" rel="stylesheet" />
     <title>Johnny Tu</title>
   </head>
   <body>
-    <div class="container">
-      <nav class="navbar">
-        <h3>JT DEV</h3>
-        <ul class="nav-links">
-          <li><a href="home.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contacts.html">Contacts</a></li>
-          <li><a href="projects.html">Projects</a></li>
-        </ul>
-      </nav>
-    </div>
+    <form
+      action="https://formspree.io/f/yourFormID"
+      method="POST"
+      class="contact-container"
+    >
+      <div class="field">
+        <label for="email">Email</label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          placeholder="Your Email"
+          required
+        />
+      </div>
+
+      <div class="field">
+        <label for="subject">Subject</label>
+        <input id="subject" name="subject" type="text" />
+      </div>
+
+      <div class="field">
+        <label for="message"> Message</label>
+        <textarea id="message" name="message" rows="15" required></textarea>
+      </div>
+
+      <button type="submit" class="email-button">Send</button>
+    </form>
   </body>
 </html>

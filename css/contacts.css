@@ -1,0 +1,29 @@
+.contact-container {
+  max-width: 480px;
+  margin: 40px auto;
+  display: grid;
+  gap: 30px;
+}
+
+.field {
+  display: grid;
+  gap: 12px;
+}
+
+.contact-container label {
+  font-weight: 600;
+}
+
+.contact-container input,
+.contact-container textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid white;
+  border-radius: 10px;
+  background: rgb(29, 29, 29);
+  color: white;
+}
+
+.contact-container button {
+  margin-top: 10px;
+}
