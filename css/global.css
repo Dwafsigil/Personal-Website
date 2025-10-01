@@ -114,13 +114,14 @@ section {
   display: grid;
   /* margin-top: 200px; */
   margin: 150px auto 0;
-  grid-template-columns: 3fr 1fr 1fr;
+  grid-template-columns: 3fr 1fr;
   gap: 40px;
   /* width: 1400px; */
   /* font-size: clamp(1rem, 5vw, 4rem); */
   /* justify-content: center; */
   align-items: center;
   margin-bottom: 300px;
+  /* padding-inline: clamp(16px, 6vw, 100px); */
 }
 
 
@@ -133,6 +134,7 @@ section {
   line-height: 1.05;
   font-size: clamp(2rem, 7vw, 5rem);
   margin: 0;
+  grid-column: 1/-1;
 }
 
 .hero-title .role-header1 { grid-column: 1 / 2;
@@ -145,8 +147,13 @@ grid-row: 1}
 .hero-title span{
   display: inline-block;              
   will-change: clip-path,transform, opacity;
+  /* font-size: clamp(.05rem, 7vw, 5rem); */
 }
 
+
+hero-title.reveal {
+  overflow: visible;
+}
 
 .reveal-init .hero-title span{
   opacity: 0;
@@ -270,7 +277,7 @@ grid-row: 1}
 .skills-list a {
   display: grid;
   grid-template-rows: 1fr auto;
-  aspect-ratio: 1/1;
+  aspect-ratio: auto;
   /* padding: 1rem; */
   /* border: 1px solid #e5e7eb; */
   /* Messes with the corners of the border */
@@ -279,6 +286,9 @@ grid-row: 1}
   background-color: rgb(29, 29, 29);
   padding: 16px;
   /* box-shadow: 10px 10px rgb(41, 41, 41); */
+  /* height: 240px; */
+  /* width: 240px; */
+
 }
 
 .skills-list img {
