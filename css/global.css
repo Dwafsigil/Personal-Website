@@ -1,6 +1,7 @@
 :root {
   --header-h: 64px;
   --container-w: 1500px; /* max readable width */
+  --step: 140ms;
 }
 
 /* Reset & base */
@@ -114,7 +115,7 @@ section {
   /* margin-top: 200px; */
   margin: 150px auto 0;
   grid-template-columns: 3fr 1fr 1fr;
-  gap: 60px;
+  gap: 40px;
   /* width: 1400px; */
   /* font-size: clamp(1rem, 5vw, 4rem); */
   /* justify-content: center; */
@@ -122,17 +123,52 @@ section {
   margin-bottom: 300px;
 }
 
-.role-header {
-  grid-column: 1/3;
-  grid-row: 1;
-  text-shadow: 1px 1px gray;
-  font-size: clamp(1rem, 6vw, 6rem);
-  line-height: 1.15;
+
+
+.hero-title{
+  display: inline-grid;
+  grid-template-columns: max-content max-content;
+  column-gap: 25px;
+  row-gap: .1em;
+  line-height: 1.05;
+  font-size: clamp(2rem, 7vw, 5rem);
+  margin: 0;
 }
+
+.hero-title .role-header1 { grid-column: 1 / 2;
+grid-row: 1 }
+.hero-title .role-header2 { grid-column: 2 / 3; 
+grid-row: 1}
+/* bottom word spans both columns */
+.hero-title .role-header3 { grid-column: 1 / -1; }
+
+.hero-title span{
+  display: inline-block;              
+  will-change: clip-path,transform, opacity;
+}
+
+
+.reveal-init .hero-title span{
+  opacity: 0;
+  transform: translateY(18px);
+  transition: 
+    opacity .9s ease,
+    transform .9s cubic-bezier(.22,.61,.36,1);
+  /* stagger: base delay + i * step */
+  transition-delay: calc(var(--i, 0) * 140ms);
+}
+
+
+.hero-title.is-visible span{
+  opacity: 1;
+  transform: translateY(0);
+
+}
+
 
 .paragraph {
   grid-column: 1/3;
-  grid-row: 2;
+  grid-row: 3;
   /* font-size: 24px; */
   color: rgb(153, 153, 153);
   line-height: 50px;
@@ -143,7 +179,7 @@ section {
 /* Projects */
 
 .projects {
-  border-top: 1px solid rgb(255, 255, 255);
+  /* border-top: 1px solid rgb(255, 255, 255); */
   /* width: 1400px; */
   margin: 0 auto;
   padding: 10px;
@@ -189,7 +225,7 @@ section {
 /* Skills */
 
 .skills {
-  border-top: 1px solid rgb(255, 255, 255);
+  /* border-top: 1px solid rgb(255, 255, 255); */
   /* width: 1400px; */
   margin: 0 auto 6rem;
   /* margin-bottom: 400px; */
@@ -333,9 +369,89 @@ section {
   text-decoration: none;
 }
 
-/* The wrapper that should reveal */
-.slide-up {
-  view-timeline-name: --reveal;
-  view-timeline-axis: block; /* use vertical scroll */
-  overflow: hidden; /* cleaner bottom-to-top look */
+/* Animation */
+/* We only hide initially if JS runs.
+   reveal.js will add .reveal-init to <html> at startup. */
+/* Animate transform/opacity; smooth easing */
+.reveal {
+  /* Cubic-Bezier higher y1 is more progress early snappier, lower x2 eases out earlier soft landing. x1, y1, x2, y2
+  linear → cubic-bezier(0, 0, 1, 1)
+
+ease → cubic-bezier(0.25, 0.1, 0.25, 1)
+
+ease-in → cubic-bezier(0.42, 0, 1, 1)
+
+ease-out → cubic-bezier(0, 0, 0.58, 1)
+
+ease-in-out → cubic-bezier(0.42, 0, 0.58, 1)*/
+  transition: opacity 3s ease, transform 2s cubic-bezier(0.2, 0.7, 0.25, 1);
+
+  /* clips anything that extends outside the element's box */
+  overflow: hidden; /
+}
+
+/* Hidden offset state only when JS is running */
+.reveal-init .reveal {
+  /* starts element as invisbile */
+  opacity: 0;
+  /* Changes the offset of the slide, basically how far it'll slide */
+  transform: translateY(150px);
+  /* delays elements left to right. calcs the multiplcation, if --i does not exist then use fallback value 0*/
+  transition-delay: calc(var(--i, 0) * 90ms);
+}
+
+/* Target state */
+/* Final state, full view and transform to original position */
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* Line Growth Animation */
+/* The element you want a growing border on (card, image wrapper, link, etc.) */
+
+.grow-line {
+   height: 2px; /* line thickness */ 
+   background: #fff; /* line color */ 
+   transform-origin: left center; 
+   transition: transform 2.5s cubic-bezier(.22,.61,.36,1); } 
+
+/* start collapsed (JS adds .reveal-init on <html>) */ .reveal-init .grow-line { 
+  transform: scaleX(0); 
+} 
+
+/* when observed, expand left → right */ 
+.grow-line.is-visible{ 
+  transform: scaleX(1); 
+}
+
+/* Appear */
+.fade-in {
+  /* opacity: 0; */
+ 
+  transition: opacity 2s cubic-bezier(0.2, 0.7, 0.25, 1);
+
+  /* clips anything that extends outside the element's box */
+  /* overflow: hidden; / */
+}
+
+/* Hidden offset state only when JS is running */
+.reveal-init .fade-in {
+  /* starts element as invisbile */
+  opacity: 0;
+  transform: scaleX(0); 
+  transform: scaleY(0); 
+   transition-delay: 1s;
+
+  
+}
+
+/* Target state */
+/* Final state, full view and transform to original position */
+.fade-in.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+
+  /* transform: translateY(0); */
 }

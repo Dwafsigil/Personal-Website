@@ -18,10 +18,14 @@
     />
 
     <title>Johnny Tu</title>
+    <!-- Adds reveal-init to the HTML, similarly to calling a class but only runs when javascript runs -->
+    <script>
+      document.documentElement.classList.add("reveal-init");
+    </script>
   </head>
   <body>
     <header class="site-header">
-      <nav class="navbar">
+      <nav class="navbar fade-in reveal">
         <h3 class="tag">JT DEV</h3>
         <ul class="nav-links">
           <li><a href="#home">Home</a></li>
@@ -34,8 +38,13 @@
     <main class="container">
       <section id="home" class="home">
         <article class="home-container">
-          <h1 class="role-header">Aspiring Full-Stack Developer</h1>
-          <p class="paragraph">
+          <h1 class="hero-title reveal">
+            <span class="role-header1" style="--i: 1">Aspiring</span>
+            <span class="role-header2" style="--i: 3">Full-Stack</span>
+            <span class="role-header3" style="--i: 5">Developer</span>
+          </h1>
+
+          <p class="paragraph reveal" style="--i: 3">
             Hello, I'm Johnny Tu, a fresh graduate from Texas A&M San Antonio. I
             love coding and working with AI - its my life's goal to develop
             AI-powered applications that'll make a difference in people's lives.
@@ -45,12 +54,17 @@
       </section>
 
       <!-- Projects -->
+      <div
+        class="line grow-line reveal"
+        style="--i: 1"
+        aria-hidden="true"
+      ></div>
       <section id="projects" class="projects">
         <div class="projects-container">
-          <h2>Projects</h2>
+          <h2 class="reveal">Projects</h2>
 
           <ul class="projects-list">
-            <li>
+            <li class="reveal">
               <a
                 class="project-item"
                 href="https://github.com/Dwafsigil/JagCoach"
@@ -90,10 +104,15 @@
       </section>
 
       <!-- Skills -->
+      <div
+        class="line grow-line reveal"
+        style="--i: 1"
+        aria-hidden="true"
+      ></div>
       <section id="skills" class="skills">
         <div class="skills-container">
-          <header class="skills-header">What I Work With</header>
-          <paragraph class="skills-paragraph"
+          <header class="skills-header reveal">What I Work With</header>
+          <paragraph class="skills-paragraph reveal"
             >The skills below are listed from my strongest to weakest
             proficiency. I've recently learned JavaScript, HTML, and CSS and I'm
             currently working on developing my skills in React. On the side,
@@ -102,11 +121,11 @@
             projects!</paragraph
           >
 
-          <h2 class="skills-list-header">Skills</h2>
+          <h2 class="skills-list-header reveal">Skills</h2>
 
           <ul class="skills-list">
             <li>
-              <a class="skill-item">
+              <a class="skill-item reveal" style="--i: 1">
                 <img
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
                 />
@@ -114,7 +133,7 @@
               </a>
             </li>
             <li>
-              <a class="skill-item">
+              <a class="skill-item reveal" style="--i: 2">
                 <img
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
                 />
@@ -122,7 +141,7 @@
               </a>
             </li>
             <li>
-              <a class="skill-item">
+              <a class="skill-item reveal" style="--i: 3">
                 <img
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
                 />
@@ -130,7 +149,7 @@
               </a>
             </li>
             <li>
-              <a class="skill-item">
+              <a class="skill-item reveal" style="--i: 4">
                 <img
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
                 />
@@ -138,7 +157,7 @@
               </a>
             </li>
             <li>
-              <a class="skill-item">
+              <a class="skill-item reveal" style="--i: 5">
                 <img
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg"
                 />
@@ -146,13 +165,13 @@
               </a>
             </li>
             <li>
-              <a class="skill-item">
+              <a class="skill-item reveal" style="--i: 1">
                 <img class="github" src="img/github-mark-white.png" />
                 <h3 class="skills-title">Github</h3>
               </a>
             </li>
             <li>
-              <a class="skill-item">
+              <a class="skill-item reveal" style="--i: 2">
                 <img
                   src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg"
                 />
@@ -207,5 +226,6 @@
         >
       </footer>
     </main>
+    <script src="script.js" defer></script>
   </body>
 </html>
