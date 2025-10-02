@@ -16,7 +16,7 @@ const start = () => {
           }
         });
       },
-      { threshold: 0.15 } // Fires when 15% of the element becomes visible
+      { threshold: 0.01 } // Fires when 15% of the element becomes visible
     );
 
     document.querySelectorAll(".reveal").forEach((el) => io.observe(el)); // Selects all elements with .reveal and registers each with the observer

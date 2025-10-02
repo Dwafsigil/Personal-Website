@@ -485,3 +485,30 @@ ease-in-out → cubic-bezier(0.42, 0, 0.58, 1)*/
 /* Zoom on hover and keyboard focus */
 .zoom:hover img{
   transform: scale(1.08);    }
+
+.skills-list a{
+  /* display: inline-block;               */
+  will-change: clip-path,transform, opacity;
+  /* font-size: clamp(.05rem, 7vw, 5rem); */
+}
+
+.skills-list.reveal {
+  overflow: visible;
+}
+
+.reveal-init .skills-list a{
+  opacity: 0;
+  transform: translateY(18px);
+  transition: 
+    opacity .9s ease,
+    transform .9s cubic-bezier(.22,.61,.36,1);
+  /* stagger: base delay + i * step */
+  transition-delay: calc(var(--i, 0) * 140ms);
+}
+
+
+.skills-list.is-visible a{
+  opacity: 1;
+  transform: translateY(0);
+
+}
