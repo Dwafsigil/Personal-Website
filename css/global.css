@@ -269,17 +269,25 @@ hero-title.reveal {
 .skills-list {
   margin-top: 40px;
   display: grid;
-  /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-   */
-  grid-template-columns: repeat(5, minmax(115px, 1fr));
+   /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr; */
+   
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   list-style: none;
-  gap: 40px;
+  gap: 16px;
+}
+/* @media is a css rule that only applies if conditions are true/ Evaluates the viewport by default. */
+/* Only apply when viewport width is less than or equal to 700 */
+@media (max-width: 700px){
+  .skills-list{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 .skills-list a {
   display: grid;
   grid-template-rows: 1fr auto;
   aspect-ratio: auto;
+  /* aspect-ratio: 1/1; */
   /* padding: 1rem; */
   /* border: 1px solid #e5e7eb; */
   /* Messes with the corners of the border */
@@ -295,7 +303,8 @@ hero-title.reveal {
 
 .skills-list img {
   display: block;
-  /* height: 65%; */
+   /* width: clamp(24px, 40vw, 120px); height: auto; */
+   
   height: 60%;
   width: 60%;
   object-fit: contain;
@@ -307,6 +316,7 @@ hero-title.reveal {
 .skills-title {
   text-align: center;
   margin-top: 25px;
+  /* font-size: clamp(10px, 3vw, 16px);  */
 }
 
 /* .github {
