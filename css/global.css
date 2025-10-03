@@ -269,7 +269,9 @@ hero-title.reveal {
 .skills-list {
   margin-top: 40px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+   */
+  grid-template-columns: repeat(5, minmax(115px, 1fr));
   list-style: none;
   gap: 40px;
 }
