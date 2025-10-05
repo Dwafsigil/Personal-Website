@@ -206,6 +206,10 @@ hero-title.reveal {
   /* background-color: #222; */
 }
 
+.minor-title{
+  margin-top: 60px;
+}
+
 .projects-list a {
   display: block;
   aspect-ratio: 4 / 3;
