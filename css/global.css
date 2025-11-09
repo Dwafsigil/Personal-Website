@@ -1,8 +1,10 @@
 :root {
   --header-h: 64px;
-  --container-w: 1500px; /* max readable width */
+  --container-w: 1500px; 
   --step: 140ms;
 }
+
+
 
 /* Reset & base */
 * {
@@ -26,6 +28,15 @@ body {
   width: 100%;
   margin: 0 auto;
   padding-inline: 100px;
+  /* padding-inline: clamp(16px, 4vw, 24px) */
+}
+
+@media (max-width: 500px){
+  .container{
+    width: 100%;
+    margin: 0 auto;
+    padding-inline: clamp(12px, 4vw, 24px);
+  }
 }
 
 /* Sticky header */
@@ -236,10 +247,7 @@ hero-title.reveal {
 /* Skills */
 
 .skills {
-  /* border-top: 1px solid rgb(255, 255, 255); */
-  /* width: 1400px; */
   margin: 0 auto 6rem;
-  /* margin-bottom: 400px; */
   padding: 1rem 20px;
 }
 
@@ -273,8 +281,6 @@ hero-title.reveal {
 .skills-list {
   margin-top: 40px;
   display: grid;
-   /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr; */
-   
   grid-template-columns: repeat(5, minmax(0, 1fr));
   list-style: none;
   gap: 16px;
@@ -292,6 +298,12 @@ hero-title.reveal {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
+/* @media (max-width: 430px){
+  .skills-list{
+    grid-template-columns: repeat(1, minmax(0, 1fr))
+  }
+} */
 
 .skills-list a {
   display: grid;
@@ -441,15 +453,14 @@ ease-in-out → cubic-bezier(0.42, 0, 0.58, 1)*/
 
 
 /* Line Growth Animation */
-/* The element you want a growing border on (card, image wrapper, link, etc.) */
 
 .grow-line {
-   height: 2px; /* line thickness */ 
-   background: #fff; /* line color */ 
+   height: 2px; 
+   background: #fff; 
    transform-origin: left center; 
    transition: transform 2.5s cubic-bezier(.22,.61,.36,1); } 
 
-/* start collapsed (JS adds .reveal-init on <html>) */ .reveal-init .grow-line { 
+ .reveal-init .grow-line { 
   transform: scaleX(0); 
 } 
 
@@ -460,12 +471,11 @@ ease-in-out → cubic-bezier(0.42, 0, 0.58, 1)*/
 
 /* Appear */
 .fade-in {
-  /* opacity: 0; */
+  
  
   transition: opacity 2s cubic-bezier(0.2, 0.7, 0.25, 1);
 
-  /* clips anything that extends outside the element's box */
-  /* overflow: hidden; / */
+  
 }
 
 /* Hidden offset state only when JS is running */
@@ -534,3 +544,4 @@ ease-in-out → cubic-bezier(0.42, 0, 0.58, 1)*/
   transform: translateY(0);
 
 }
+
