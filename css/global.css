@@ -72,6 +72,15 @@ body {
 .tag {
   font-size: clamp(1rem, 1.25vw, 3rem);
 }
+
+@media (max-width: 500px){
+  .tag {
+  font-size: 10px;
+}
+}
+
+
+
 .nav-links {
   /* Removes bulelt points */
   list-style: none;
@@ -243,6 +252,13 @@ hero-title.reveal {
   display: flex;
   justify-content: space-between;
 }
+
+@media (max-width: 500px){
+  .project-header{
+    font-size: 8px;
+  }
+}
+
 
 /* Skills */
 
