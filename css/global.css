@@ -79,7 +79,10 @@ body {
 }
 }
 
-
+.text-link{
+  color : white;
+  text-decoration: none;
+}
 
 .nav-links {
   /* Removes bulelt points */
@@ -99,7 +102,7 @@ body {
   color: white;
 }
 
-/* Stable states (no layout shift) */
+
 .nav-links a:hover {
   border-bottom-color: white;
 }
@@ -108,7 +111,7 @@ body {
   color: white;
 }
 .nav-links a:active {
-  color: #6b21a8;
+  color: black;
 }
 
 /* Page sections (no scroll-snap; normal page scroll) */
